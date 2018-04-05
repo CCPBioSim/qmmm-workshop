@@ -1,0 +1,24 @@
+parm wt.box.top
+trajin min_rc-1.8.rst
+trajin min_rc-1.6.rst
+trajin min_rc-1.4.rst
+trajin min_rc-1.2.rst
+trajin min_rc-1.0.rst
+trajin min_rc-0.8.rst
+trajin min_rc-0.6.rst
+trajin min_rc-0.4.rst
+trajin min_rc-0.3.rst
+trajin min_rc-0.2.rst
+trajin min_rc0.0.rst
+trajin min_rc0.2.rst
+trajin min_rc0.4.rst
+trajin min_rc0.6.rst
+trajin min_rc0.8.rst
+trajin min_rc1.0.rst
+trajin min_rc1.2.rst
+trajin min_rc1.4.rst
+trajin min_rc1.6.rst
+trajin min_rc1.8.rst
+strip :203&!@N,C,O,CA,H,HA,CB,HB2,HB3 outprefix Ala90
+trajout min_Ala90_rc-1.8.rst restart onlyframes 1
+trajout min_Ala90.trj

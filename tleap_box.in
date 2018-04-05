@@ -1,0 +1,18 @@
+# read in standard protein/DNA parameters and GAFF
+source oldff/leaprc.ff14SB
+source leaprc.gaff
+# read in generated ligand parameters
+loadamberprep ../CHO.prepc
+loadamberparams ../CHO.frcmod
+# load the water model (& ions)
+loadamberparams frcmod.ionsjc_tip3p
+# load the prepared pdb 
+mol = loadpdb min_rc-0.3init.pdb
+# solvate with box
+solvatebox mol TIP3PBOX 10.0 0.9
+# save parm & crd, use PyMOL compatible extensions
+saveamberparm mol wt.box.top min_rc-0.3box.rst
+savepdb mol  min_rc-0.3box.pdb
+quit
+
+
