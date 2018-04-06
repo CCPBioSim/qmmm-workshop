@@ -11,17 +11,16 @@ The training workshop will introduce non-specialists to the use of combined quan
 
 ## Training Material
 
-The tutorial workshop consists of a series of scripts, accompanied by an informal lecture. The scripts are available
-here, and can be run using the 
+The tutorial workshop consists of a series of scripts to run the simulations and analysis of the outputs, accompanied by an informal lecture. The scripts can be run using the 
 <a href="https://ccpbiosim.github.io/workshop/events/bristol2018/server.html" target="_blank">workshop jupyter server</a>.
 
-Once you have started the server open a Terminal and change into the `qmmm_workshop` directory. You will find the workshop files there.
+Once you have started the server open a Terminal and change into the `qmmm_workshop` directory. You will find the scripts and all other required workshop files there.
 
 ## Contents
 
 In this tutorial workshop, you will learn how to apply combined quantum mechanics/molecular mechanics (QM/MM) methods to model a chemical reaction in an enzyme. You will calculate a free energy profile and a potential energy profile for the reaction, and analyse an important interaction in the active site. 
 
-You will be using the simulation software from the <a href="http://ambermd.org/AmberTools.php">AmberTools package</a>. The *sander* programme is capable of the QM/MM simulations required. For efficiency, the semi-empirical QM method PM6 will be used throughout (implemented directly in sander). You can further use <a href"http://www.ks.uiuc.edu/Research/vmd/">VMD</a> to visualise the simulations.
+You will be using the simulation software from the <a href="http://ambermd.org/AmberTools.php">AmberTools package</a>. The *sander* programme is capable of the QM/MM simulations required. For efficiency, the semi-empirical QM method PM6 will be used throughout (implemented directly in sander). You can further use <a href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a> to visualise the simulations.
 
 You will be simulating the enzyme-catalysed reaction of chorismate to prephenate. This is an intramolecular reaction. The reaction proceeds via a cyclic transition state. A (geometric) reaction coordinate can be defined as the difference between the length of the C-O bond that is breaking, and the length of the C-C bond that is forming. Plotting the energy of the molecule as a function of this reaction coordinate returns a reaction energy profile.
 
