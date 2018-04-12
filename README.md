@@ -12,7 +12,7 @@ The training workshop will introduce non-specialists to the use of combined quan
 ## Training Material
 
 The tutorial workshop consists of a series of scripts to run the simulations and analysis of the outputs, accompanied by an informal lecture. The scripts can be run using the 
-<a href="https://ccpbiosim.github.io/workshop/events/bristol2018/server.html" target="_blank">workshop jupyter server</a>.
+<a href="https://ccpbiosim.github.io/workshop/events/bristol2018/server.html" target="_blank">workshop jupyter server</a>. All material was prepared by <a href="https://vanderkampgroup.wordpress.com">Marc van der Kamp</a> with assistance from Sam Johns.
 
 Once you have started the server open a Terminal and change into the `qmmm_workshop` directory. You will find the scripts and all other required workshop files there.
 
