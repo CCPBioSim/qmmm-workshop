@@ -26,7 +26,7 @@ You will be simulating the enzyme-catalysed reaction of chorismate to prephenate
 
 ![](pics/chorismate_reaction.png)
 
-This reaction is catalysed by the enzyme chorismate mutase. Chorismate mutase helps catalyse the conversion of chorismate to prephenate by lowering the activation energy of the reaction. The enzyme-substrate (chorismate) complex has been set up for simulation using the X-ray crystal structure <a href="http://dx.doi.rog/10.2210/pdb2CHT/pdb">2CHT</a> (first trimer) and the <a href="https://github.com/marcvanderkamp/enlighten">Enlighten tools</a>.
+This reaction is catalysed by the enzyme chorismate mutase. Chorismate mutase helps catalyse the conversion of chorismate to prephenate by lowering the activation energy of the reaction. The enzyme-substrate (chorismate) complex has been set up for simulation using the X-ray crystal structure <a href="http://dx.doi.org/10.2210/pdb2CHT/pdb">2CHT</a> (first trimer) and the <a href="https://github.com/marcvanderkamp/enlighten">Enlighten tools</a>.
 
 ![](pics/chorismate.jpg)
 
@@ -35,7 +35,7 @@ This reaction is catalysed by the enzyme chorismate mutase. Chorismate mutase he
 
 ### Calculating a free energy profile using umbrella sampling
 
-We will simulate the reaction starting from a 'snapshot' from a standard MM dynamics simulation (generated using the *Enlighten* DYNAM protocol). You can choose your own starting structure from the md*.rst files available the `qmmm_workshop` directory.
+We will simulate the reaction starting from a 'snapshot' from a standard MM dynamics simulation (generated using the <a href="https://github.com/marcvanderkamp/enlighten">*Enlighten*</a> DYNAM protocol). You can choose your own starting structure from the md*.rst files available in the `qmmm_workshop` directory (md1.rst to md20.rst).
 
 #### Preparation
 Once in the `qmmm_workshop` directory, make a new directory inside it and add a symlink (*symbolic link* or soft link) entitled `md.rst` to the starting structure of your choice. For example for starting structure md5.rst:
@@ -63,9 +63,9 @@ The `setup_umb_samp.sh` script also generated a new script, `run_umb_samp.sh`. T
 Now, the first umbrella sampling simulation should start, and you will see new files written in the directory `rc-1.80`. Values of the reaction coordinate at each simulation step (1 fs) are collected in `rc-1.80/rc-1.80_1.tra`. 
 
 Running these umbrella sampling simulations will take a little while (~25 minutes). 
-While you are waiting, you can download the `wt.sp20.top` file and the restart file you selected (e.g. `md5.rst`) to your PC and load & view in VMD. See further below, [Visualising the umbrella sampling simulation in VMD](#Visualising-the-umbrella-sampling-simulation-in-VMD).
+While you are waiting, you can download the `wt.sp20.top` file and the restart file you selected (e.g. `md5.rst`) to your PC and load & view in VMD. See further below, [Visualising the umbrella sampling simulation in VMD](####Visualising-the-umbrella-sampling-simulation-in-VMD).
  
-You can continue with the next step, [**Calculating a potential energy profile using sequential QM/MM minimisations**](#Calculating-a-potential-energy-profile-using-sequential-QM/MM-minimisations), once the umbrella sampling window with reaction coordinate value -0.3 has finished, i.e. `rc-0.30/rc-0.30_1.tra` is complete (1000 lines), which should take ~10-12 minutes.
+You can continue with the next part of the tutorial, [**Calculating a potential energy profile using sequential QM/MM minimisations**](###Calculating-a-potential-energy-profile-using-sequential-QM/MM-minimisations), once the umbrella sampling window with reaction coordinate value -0.3 has finished, i.e. `rc-0.30/rc-0.30_1.tra` is complete (1000 lines), which should take ~10-12 minutes.
 
 
 #### Analysis: the free energy profile for the reaction
@@ -75,9 +75,9 @@ To run WHAM, type:
 
 `bash ../run_wham.sh`
 
-This will take a few seconds and generate a 'metafile', `meta.dat`, and use this to run the WHAM code. The WHAM code then generates `wham.log` and `wham.txt`. The first line of `wham.log` shows the command that was used to run WHAM. the `wham.txt` file contains the results.
+This will take a few seconds and generate a 'metafile', `meta.dat`, and use this to run the <a href="http://membrane.urmc.rochester.edu/content/wham">WHAM code</a>. The WHAM code then generates `wham.log` and `wham.txt`. The first line of `wham.log` shows the command that was used to run WHAM. the `wham.txt` file contains the results.
 
-To plot the free energy profile, download `wham.dat` (navigate to your umbrella sampling directory in the Jupyter window and use e.g. right click and *'Save link as'* or similar).
+To plot the free energy profile, download `wham.txt` (navigate to your umbrella sampling directory in the Jupyter window and use e.g. right click and *'Save link as'* or similar).
 Import in your favourate plotting program (e.g. Excel). 
 Alternatively, copy and paste column-by-column from the terminal window to your plotting program, e.g. after using:
 
@@ -88,6 +88,7 @@ Alternatively, copy and paste column-by-column from the terminal window to your 
 Once you have imported the data, plot the first column on the x-axis and the second on the y-axis.
 
 Note that the WHAM program has (arbitrarily) set free energy of the bin with lowest free energy value to zero. You can make a third column where you set the reactant complex minimum to zero instead.
+(See the 'umbrella sampling' sheet in `qmmm_workshop/example/example.xls`.)
 
 ![](pics/pmf.png)
 
@@ -106,7 +107,7 @@ Download the generated trajectory `us_traj.mdcrd` and `wt.sp20.top` (located in 
 	- Select `wt.sp20.top` and set filetype as "AMBER7 Parm". Then press "Load". 
 	- Browse to trajectory: us_traj.mdcrd. Set filetype as "AMBER Coordinates". Press "Load".
 - In the main menu, choose: Graphics --> Representations.
-- Create representations, e.g. "all" with Drawing Method "New Ribbons" and "resname CHO" with Drawing Method "DynamicBonds".
+- Create representations, e.g. "all" with Drawing Method "NewCartoon" and "resname CHO" with Drawing Method "DynamicBonds".
 
 Note how the bond lenghts of the C-O bond that is broken and the C-C bond that is formed change along the trajectory.
 
@@ -171,6 +172,8 @@ Once you have imported the data, make additional columns with the energies *rela
 The plot should look something like this:
 ![](pics/adiab.png)
 
+(See the 'adiabatic mapping' sheet in `qmmm_workshop/example/example.xls`.)
+
 Note how:
 
 - the enzyme environment lowers the barrier to reaction (i.e. stabilises the energy of the transition state complex), compared to the 'gas-phase' energies
@@ -192,16 +195,56 @@ Download the generated trajectory `adiab_traj.mdcrd` and `wt.box.top` to your PC
 	- Select `wt.box.top` and set filetype as "AMBER7 Parm". Then press "Load". 
 	- Browse to trajectory: us_traj.mdcrd. Set filetype as "AMBER Coordinates with Periodic Box". Press "Load".
 - In the main menu, choose: Graphics --> Representations.
-- Create representations, e.g. "all" with Drawing Method "New Ribbons" and "resname CHO" with Drawing Method "DynamicBonds".
+- Create representations, e.g. "all" with Drawing Method "NewCartoon" and "resname CHO" with Drawing Method "DynamicBonds".
 - If you have already set up representations for the trajectory from umbrella sampling, you can also 'Clone' these. In the main VMD menu, choose: Extensions --> Visualization --> Clone Representations.
+- To show the Arginine residue that is key for transition state stabilisation, you can create a representation with e.g. e.g. "resid 203" (original residue Arg90, in the third chain of the trimer) with Drawing Method "Licorice"
 
 Again, you can see how the bond lenghts change of the C-O bond that is broken and the C-C bond that is formed. Further note the difference between the umbrella sampling MD simulations and the 'adiabatic mapping' energy minimisations.
+Does the positioning of Arg90 make sense, in light of its role in transition state stabilisation?
+
+### Example output and visualisation
+If, for any reason, you encounter problems with completing the simulations and visualising them in VMD, you can load example trajectories for [*umbrella sampling*](###Calculating-a-free-energy-profile-using-umbrella-sampling) and [*adiabatic mapping*](###Calculating-a-potential-energy-profile-using-sequential-QM/MM-minimisations) as follows:
+
+Download `wt.sp20.top` from the `qmmm_workshop` directory, and `us_traj.mdcrd`, `wt.box.top`,  `adiab_traj.mdcrd` and `view_traj.vmd` from the directory `qmmm_workshop/example` to the same location on your local PC (which should have VMD installed).
+
+Open VMD and *in the command line window* (window name ending in *vmd.exe*), change directory to the location you downloaded the files, for example:
+
+`cd O:/Downloads/`
+
+Then, from the *VMD Main* window, do *File --> Load Visualization State...* and choose `view_traj.vmd`.
+
+This should load the umbrella sampling simulation in the "Molecule" *wt.sp20.top* and the adiabatic mapping simulation in the "Molecule" *wt.box.top*. You can now turn off the view of one of these by double-clicking on "D" in front of the molecule name in the *VMD Main* window, double-click on "T" in front of the molecule you are viewing, and press the play button to view the simulation.
 
 
 ### Final comments
 
+Note that the simulation setup, QM method and protocols used here are mainly optimised for speed, NOT accuracy.
+
+If you are interested in the actual steps and commands required to generate the simulations and results in this tutorial, please take a look at the shell scripts (e.g. `run_adiab_all.sh`, `setup_umb_samp.sh`), which are commented.
+
+The protocols demonstrated in this workshop, with semi-empirical QM methods, are particularly relevant to enzyme reactions that do ***not*** involve (transition) metals or radicals etc. For tutorial material involving QM/MM enzyme reaction modelling with transition metals (Cytochrome P450), please see the 
+<a href="https://sites.google.com/site/qmmmworkshop2017">CCPBioSim **ChemShell** QM/MM workshop</a>.  This site also contains <a href"https://sites.google.com/site/qmmmworkshop2017/background/qmmm-calculations">useful practical information</a> for QM/MM calculations in enzymes.
+
+
 #### Further reading
-M. W. van der Kamp & A.J. Mulholland "Combined quantum mechanics/molecular mechanics (QM/MM) methods in computational enzymology", Biochem. (2013) 52, 2708-2728. <a href="http://dx.doi.org/10.1021/bi400215w">DOI</a>
+**Reviews**
+
+Van der Kamp MW & Mulholland AJ. 
+*Combined quantum mechanics/molecular mechanics (QM/MM) methods in computational enzymology*
+Biochem. (2013) 52, 2708-2728. <a href="http://dx.doi.org/10.1021/bi400215w">DOI</a>
+
+Senn HM & Thiel W.
+*QM/MM Methods for Biomolecular Systems*
+Angew. Chem. Int. Ed. (2009) 48, 1198-1229.
+<a href="http://dx.doi.org/10.1002/anie.200802019">DOI</a>
+
+Lonsdale R, Harvey JN, Mulholland AJ.
+*A practical guide to modelling enzyme-catalysed reactions*
+Chem. Soc. Rev. (2012) 41, 3025-3038.
+<a href="http://dx.doi.org/10.1039/C2CS15297E">DOI</a> 
+
+
+**Related publications on Chorismate Mutase QM/MM simulations**
 
 F. Claeyssens, K.E. Ranaghan, F.R. Manby, J.N. Harvey & A.J. Mulholland, 'Multiple high-level QM/MM reaction paths demonstrate transition-state stabilization in chorismate mutase: correlation of barrier height with transition-state stabilization'. Chem. Commun. 5068-5070 (2005). <a href="http://dx.doi.org/10.1039/B508181E">DOI</a>
 

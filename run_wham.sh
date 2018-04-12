@@ -16,4 +16,4 @@ for rc in `seq -1.8 0.15 1.8`; do awk '{printf "%s  %s\n",$1,$3}' rc$rc/rc${rc}_
 # 1. Make a 'meta file' referencing the corrected .tra files - note that force-constant needs to be doubled, so set to 200 (due to different definition)
 for i in `seq -1.8 0.15 1.8`; do echo "rc$i/rc${i}_2.tra $i 200"; done > meta.dat
 # 2. Run wham with extremes and number of bins such that we'll get bins of 0.05 Ang width and midpoints of -1.8, -1.6 etc.
-$WHAM_HOME/wham/wham P -1.825 1.825 73 0.000000001 300 0 meta.dat wham.dat 0 1 &> wham.log
+$WHAM_HOME/wham/wham P -1.825 1.825 73 0.000000001 300 0 meta.dat wham.txt 0 1 &> wham.log
