@@ -12,9 +12,11 @@ The training workshop will introduce non-specialists to the use of combined quan
 ## Training Material
 
 The tutorial workshop consists of a series of scripts to run the simulations and analysis of the outputs, accompanied by an informal lecture. The scripts can be run using the 
-<a href="https://ccpbiosim.github.io/workshop/events/bristol2018/server.html" target="_blank">workshop jupyter server</a>. All material was prepared by <a href="https://vanderkampgroup.wordpress.com">Marc van der Kamp</a> with assistance from Sam Johns.
+<a href="https://ccpbiosim.github.io/workshop/events/bristol2018/server.html" target="_blank">workshop jupyter server</a>. 
 
 Once you have started the server open a Terminal and change into the `qmmm_workshop` directory. You will find the scripts and all other required workshop files there.
+
+All material was prepared by <a href="vanderkampgroup.wordpress.com">Marc van der Kamp</a> with assistance from Sam Johns.
 
 ## Contents
 
@@ -81,9 +83,9 @@ To plot the free energy profile, download `wham.txt` (navigate to your umbrella 
 Import in your favourate plotting program (e.g. Excel). 
 Alternatively, copy and paste column-by-column from the terminal window to your plotting program, e.g. after using:
 
-`sed /^#/d wham.dat | cut -f 1`
+`sed /^#/d wham.txt | cut -f 1`
 
-`sed /^#/d wham.dat | cut -f 2`
+`sed /^#/d wham.txt | cut -f 2`
 
 Once you have imported the data, plot the first column on the x-axis and the second on the y-axis.
 
