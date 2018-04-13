@@ -195,7 +195,7 @@ Download the generated trajectory `adiab_traj.mdcrd` and `wt.box.top` to your PC
 - Start VMD. 
 - In the main VMD menu, choose: File --> New Molecule. 
 	- Select `wt.box.top` and set filetype as "AMBER7 Parm". Then press "Load". 
-	- Browse to trajectory: us_traj.mdcrd. Set filetype as "AMBER Coordinates with Periodic Box". Press "Load".
+	- Browse to trajectory: adiab_traj.mdcrd. Set filetype as "AMBER Coordinates with Periodic Box". Press "Load".
 - In the main menu, choose: Graphics --> Representations.
 - Create representations, e.g. "all" with Drawing Method "NewCartoon" and "resname CHO" with Drawing Method "DynamicBonds".
 - If you have already set up representations for the trajectory from umbrella sampling, you can also 'Clone' these. In the main VMD menu, choose: Extensions --> Visualization --> Clone Representations.
