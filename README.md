@@ -225,7 +225,7 @@ Note that the simulation setup, QM method and protocols used here are mainly opt
 If you are interested in the actual steps and commands required to generate the simulations and results in this tutorial, please take a look at the shell scripts (e.g. `run_adiab_all.sh`, `setup_umb_samp.sh`), which are commented.
 
 The protocols demonstrated in this workshop, with semi-empirical QM methods, are particularly relevant to enzyme reactions that do ***not*** involve (transition) metals or radicals etc. For tutorial material involving QM/MM enzyme reaction modelling with transition metals (Cytochrome P450), please see the 
-<a href="https://sites.google.com/site/qmmmworkshop2017">CCPBioSim **ChemShell** QM/MM workshop</a>.  This site also contains <a href"https://sites.google.com/site/qmmmworkshop2017/background/qmmm-calculations">useful practical information</a> for QM/MM calculations in enzymes.
+<a href="https://sites.google.com/site/qmmmworkshop2017">CCPBioSim **ChemShell** QM/MM workshop</a>.  This site also contains <a href="https://sites.google.com/site/qmmmworkshop2017/background/qmmm-calculations">useful practical information</a> for QM/MM calculations in enzymes.
 
 
 #### Further reading
