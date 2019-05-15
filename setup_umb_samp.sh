@@ -28,6 +28,11 @@ rc_line="iat=3757,3755,3741,3762, rstwt=1,-1,"
 ################### END USER INPUT ###################
 #
 
+### Prelmiminary check ###
+# Check if 'bc' available and set check_bc (to be used later)
+check_bc=1; command -v bc >/dev/null 2>&1 || { check_bc=0 ;}
+
+
 #### Start preparing directories and files
 qsub_file="run_umb_samp.sh"
 
@@ -75,13 +80,16 @@ export MYEXE=\"\$AMBERHOME/bin/sander\"
 
 
 #### Start THE loop 
-# In case 'bc' is not present, use hard-coded r1 and r4)
+# In case 'bc' is not present (check_bc=0), use hard-coded r1 and r4)
 for i in `seq $start_rc $step $end_rc`; do
        rc=`printf "%3.2f" $i`
+     if [ $check_bc -eq 1 ]; then
        r1=`echo "scale=2; $rc-10" | bc`
        r4=`echo "scale=2; $rc+10" | bc`
-       #r1=-10.0
-       #r4=10.0 
+     else
+       r1=-10.0
+       r4=10.0
+     fi 
        printf "\t%s\n" $rc
 # Continue
 	mkdir rc$rc
