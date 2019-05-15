@@ -67,7 +67,7 @@ Now, the first umbrella sampling simulation should start, and you will see new f
 Running these umbrella sampling simulations will take a little while (~25 minutes). 
 While you are waiting, you can download the `wt.sp20.top` file and the restart file you selected (e.g. `md5.rst`) to your PC and load & view in VMD. See further below, [Visualising the umbrella sampling simulation in VMD](#Visualising-the-umbrella-sampling-simulation-in-VMD).
  
-You can continue with the next part of the tutorial, [**Calculating a potential energy profile using sequential QM/MM minimisations**](#Calculating-a-potential-energy-profile-using-sequential-QM/MM-minimisations), once the umbrella sampling window with reaction coordinate value -0.3 has finished, i.e. `rc-0.30/rc-0.30_1.tra` is complete (1000 lines), which should take ~10-12 minutes.
+You can continue with the next part of the tutorial, [**Calculating a potential energy profile using sequential QM/MM minimisations**](#Calculating-a-potential-energy-profile-using-sequential-QM-MM-minimisations), once the umbrella sampling window with reaction coordinate value -0.3 has finished, i.e. `rc-0.30/rc-0.30_1.tra` is complete (1000 lines), which should take ~10-12 minutes.
 
 
 #### Analysis: the free energy profile for the reaction
@@ -115,7 +115,7 @@ Note how the bond lenghts of the C-O bond that is broken and the C-C bond that i
 
 
 
-### Calculating a potential energy profile using sequential QM/MM minimisations
+### Calculating a potential energy profile using sequential QM-MM minimisations
 
 We will obtain a potential energy profile of the reaction starting from a 'snapshot' from the umbrella sampling simulation around the transition state of the reaction. The chorismate-to-prephanate reaction in chorismate mutase has a transition state around the reaction coordinate value of -0.30. We can therefore start once the umbrella sampling window with reaction coordinate value -0.3 has finished, i.e. `rc-0.30/rc-0.30_1.tra` is complete.
 
@@ -205,7 +205,7 @@ Again, you can see how the bond lenghts change of the C-O bond that is broken an
 Does the positioning of Arg90 make sense, in light of its role in transition state stabilisation?
 
 ### Example output and visualisation
-If, for any reason, you encounter problems with completing the simulations and visualising them in VMD, you can load example trajectories for [*umbrella sampling*](#Calculating-a-free-energy-profile-using-umbrella-sampling) and [*adiabatic mapping*](#Calculating-a-potential-energy-profile-using-sequential-QM/MM-minimisations) as follows:
+If, for any reason, you encounter problems with completing the simulations and visualising them in VMD, you can load example trajectories for [*umbrella sampling*](#Calculating-a-free-energy-profile-using-umbrella-sampling) and [*adiabatic mapping*](#Calculating-a-potential-energy-profile-using-sequential-QM-MM-minimisations) as follows:
 
 Download `wt.sp20.top` from the `qmmm_workshop` directory, and `us_traj.mdcrd`, `wt.box.top`,  `adiab_traj.mdcrd` and `view_traj.vmd` from the directory `qmmm_workshop/example` to the same location on your local PC (which should have VMD installed).
 
