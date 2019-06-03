@@ -14,7 +14,7 @@ The training workshop will introduce non-specialists to the use of combined quan
 The tutorial workshop consists of a series of scripts to run the simulations and analysis of the outputs, accompanied by an informal lecture. The scripts can be run using the 
 <a href="https://ccpbiosim.github.io/workshop/events/bristol2018/server.html" target="_blank">workshop jupyter server</a>. 
 
-Once you have started the server open a Terminal and change into the `qmmm_workshop` directory. You will find the scripts and all other required workshop files there.
+Once you have started the server open a Terminal and change into the `qmmm-workshop` directory. You will find the scripts and all other required workshop files there.
 
 All material was prepared by <a href="https://vanderkampgroup.wordpress.com">Marc van der Kamp</a> with assistance from Sam Johns.
 
@@ -37,10 +37,10 @@ This reaction is catalysed by the enzyme chorismate mutase. Chorismate mutase he
 
 ### Calculating a free energy profile using umbrella sampling
 
-We will simulate the reaction starting from a 'snapshot' from a standard MM dynamics simulation (generated using the <a href="https://github.com/marcvanderkamp/enlighten">*Enlighten*</a> DYNAM protocol). You can choose your own starting structure from the md*.rst files available in the `qmmm_workshop` directory (md1.rst to md20.rst).
+We will simulate the reaction starting from a 'snapshot' from a standard MM dynamics simulation (generated using the <a href="https://github.com/marcvanderkamp/enlighten">*Enlighten*</a> DYNAM protocol). You can choose your own starting structure from the md*.rst files available in the `qmmm-workshop` directory (md1.rst to md20.rst).
 
 #### Preparation
-Once in the `qmmm_workshop` directory, make a new directory inside it and add a symlink (*symbolic link* or soft link) entitled `md.rst` to the starting structure of your choice. For example for starting structure md5.rst:
+Once in the `qmmm-workshop` directory, make a new directory inside it and add a symlink (*symbolic link* or soft link) entitled `md.rst` to the starting structure of your choice. For example for starting structure md5.rst:
 
 `mkdir us5`
 
@@ -90,7 +90,7 @@ Alternatively, copy and paste column-by-column from the terminal window to your 
 Once you have imported the data, plot the first column on the x-axis and the second on the y-axis.
 
 Note that the WHAM program has (arbitrarily) set free energy of the bin with lowest free energy value to zero. You can make a third column where you set the reactant complex minimum to zero instead.
-(See the 'umbrella sampling' sheet in `qmmm_workshop/example/example.xls`.)
+(See the 'umbrella sampling' sheet in `qmmm-workshop/example/example.xls`.)
 
 ![](pics/pmf.png)
 
@@ -101,7 +101,7 @@ To aid visualisation of the series of simulations, first create a trajectory of 
 
 `$AMBERHOME/bin/cpptraj < ../make_us_trj.in &> make_us_trj.log`
 
-Download the generated trajectory `us_traj.mdcrd` and `wt.sp20.top` (located in `qmmm_workshop`) to your PC and load & view in VMD as follows:
+Download the generated trajectory `us_traj.mdcrd` and `wt.sp20.top` (located in `qmmm-workshop`) to your PC and load & view in VMD as follows:
 
 - Go back to the initial Jupyter notebook tab (File browser) and navigate to files. Use e.g *Right Click* and *"Save link as..."* to download
 - Start VMD. 
@@ -127,7 +127,7 @@ In addition to obtaining the potential energy profile, we will also:
 - calculate the energy of the enzyme-reacting molecule complex along the potential energy profile *without* a key residue, Arg90 in the original numbering (using '*single point*' calculations in *sander*, after 'stripping' away the Arg90 side-chain with *cpptraj*).
 
 #### Preparation
-Create a new directory (in `qmmm_workshop`), e.g. called `adiab5` (if you originally started with md5.rst), for running the '*adiabatic mapping*', move into it: 
+Create a new directory (in `qmmm-workshop`), e.g. called `adiab5` (if you originally started with md5.rst), for running the '*adiabatic mapping*', move into it: 
 
 `cd ..`
 
@@ -174,7 +174,7 @@ Once you have imported the data, make additional columns with the energies *rela
 The plot should look something like this:
 ![](pics/adiab.png)
 
-(See the 'adiabatic mapping' sheet in `qmmm_workshop/example/example.xls`.)
+(See the 'adiabatic mapping' sheet in `qmmm-workshop/example/example.xls`.)
 
 Note how:
 
@@ -207,9 +207,9 @@ Does the positioning of Arg90 make sense, in light of its role in transition sta
 ### Example output and visualisation
 If, for any reason, you encounter problems with completing the simulations and visualising them in VMD, you can load example trajectories for [*umbrella sampling*](#Calculating-a-free-energy-profile-using-umbrella-sampling) and [*adiabatic mapping*](#Calculating-a-potential-energy-profile-using-sequential-QM-MM-minimisations) as follows:
 
-Download `wt.sp20.top` from the `qmmm_workshop` directory, and `us_traj.mdcrd`, `wt.box.top`,  `adiab_traj.mdcrd` and `view_traj.vmd` from the directory `qmmm_workshop/example` to the same location on your local PC (which should have VMD installed).
+Download `wt.sp20.top` from the `qmmm-workshop` directory, and `us_traj.mdcrd`, `wt.box.top`,  `adiab_traj.mdcrd` and `view_traj.vmd` from the directory `qmmm-workshop/example` to the same location on your local PC (which should have VMD installed).
 
-Open VMD and *in the command line window* (window name ending in *vmd.exe*), change directory to the location you downloaded the files, for example:
+Open VMD and *in the command line window* (window name ending in *vmd.exe* in Windows OS), change directory to the location you downloaded the files, for example:
 
 `cd O:/Downloads/`
 
