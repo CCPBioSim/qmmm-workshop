@@ -11,11 +11,10 @@ The training workshop will introduce non-specialists to the use of combined quan
 
 ## Training Material
 
-The tutorial workshop consists of a series of scripts to run the simulations and analysis of the outputs, accompanied by an informal lecture. The scripts can be run using the 
-<a href="http://132.145.243.165" target="_blank">CCPBioSim training server</a>. 
+The tutorial workshop consists of a series of scripts to run the simulations and analysis of the outputs, accompanied by an informal lecture. The scripts can be run using the CCPBioSim training server. 
 
 Once you have started the server open a Terminal (Click "New" top-right of the item list, and choose "Terminal" from the list). 
-On the Terminal page that opens up, change into the `qmmm-workshop` directory (`cd qmmm-workshop`). You will find the scripts and all other required workshop files there.
+You will find the scripts and all other required workshop files there.
 Once you are finished, please use the "logout" button on the jupyter server page (top right).
 
 All material was prepared by <a href="https://vanderkampgroup.wordpress.com">Marc van der Kamp</a> with assistance from Sam Johns.
@@ -24,7 +23,7 @@ All material was prepared by <a href="https://vanderkampgroup.wordpress.com">Mar
 
 In this tutorial workshop, you will learn how to apply combined quantum mechanics/molecular mechanics (QM/MM) methods to model a chemical reaction in an enzyme. You will calculate a free energy profile and a potential energy profile for the reaction, and analyse an important interaction in the active site. 
 
-You will be using the simulation software from the <a href="http://ambermd.org/AmberTools.php">AmberTools package</a>. The *sander* programme is capable of the QM/MM simulations required. For efficiency, the semi-empirical QM method PM6 will be used throughout (implemented directly in sander). You can further use <a href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a> to visualise the simulations.
+You will be using the simulation software from the <a href="http://ambermd.org/AmberTools.php">AmberTools package</a>. The *sander* programme is capable of the QM/MM simulations required. For efficiency, the semi-empirical QM method PM6 will be used throughout (implemented directly in sander). You can further use <a href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a> to visualise the simulations on your local machine (after downloading the final files).
 
 You will be simulating the enzyme-catalysed reaction of chorismate to prephenate. This is an intramolecular reaction. The reaction proceeds via a cyclic transition state. A (geometric) reaction coordinate can be defined as the difference between the length of the C-O bond that is breaking, and the length of the C-C bond that is forming. Plotting the energy of the molecule as a function of this reaction coordinate returns a reaction energy profile.
 
@@ -42,7 +41,7 @@ This reaction is catalysed by the enzyme chorismate mutase. Chorismate mutase he
 We will simulate the reaction starting from a 'snapshot' from a standard MM dynamics simulation (generated using the <a href="https://github.com/marcvanderkamp/enlighten">*Enlighten*</a> DYNAM protocol). You can choose your own starting structure from the md*.rst files available in the `qmmm-workshop` directory (md1.rst to md20.rst).
 
 #### Preparation
-Once in the `qmmm-workshop` directory, make a new directory inside it and add a symlink (*symbolic link* or soft link) entitled `md.rst` to the starting structure of your choice. For example for starting structure md5.rst:
+Make a new directory inside it and add a symlink (*symbolic link* or soft link) entitled `md.rst` to the starting structure of your choice. For example for starting structure md5.rst:
 
 `mkdir us5`
 
@@ -152,7 +151,7 @@ To run the script (in the background), simply type:
 `bash ../run_adiab_all.sh &`
 
 This should take about ~7-10 minutes in total.
-For more information about the different steps that are performed in the script, read the comments in the `run_adiab_all.sh` script (e.g. by opening it in `nano` or `vi`).
+For more information about the different steps that are performed in the script, read the comments in the `run_adiab_all.sh` script (e.g. by opening it in `nano`).
 
 Once the script has finished, the energy values obtained will be written to the file `adiabatic_mapping_energies.dat`.
 
