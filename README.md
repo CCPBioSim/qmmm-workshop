@@ -128,7 +128,7 @@ In addition to obtaining the potential energy profile, we will also:
 - calculate the energy of the enzyme-reacting molecule complex along the potential energy profile *without* a key residue, Arg90 in the original numbering (using '*single point*' calculations in *sander*, after 'stripping' away the Arg90 side-chain with *cpptraj*).
 
 #### Preparation
-Create a new directory (in `qmmm-workshop`), e.g. called `adiab5` (if you originally started with md5.rst), for running the '*adiabatic mapping*', move into it: 
+Create a new directory, e.g. called `adiab5` (if you originally started with md5.rst), for running the '*adiabatic mapping*', move into it: 
 
 `cd ..`
 
@@ -175,7 +175,7 @@ Once you have imported the data, make additional columns with the energies *rela
 The plot should look something like this:
 ![](pics/adiab.png)
 
-(See the 'adiabatic mapping' sheet in `qmmm-workshop/example/example.xls`.)
+(See the 'adiabatic mapping' sheet in `example/example.xls`.)
 
 Note how:
 
@@ -208,7 +208,7 @@ Does the positioning of Arg90 make sense, in light of its role in transition sta
 ### Example output and visualisation
 If, for any reason, you encounter problems with completing the simulations and visualising them in VMD, you can load example trajectories for [*umbrella sampling*](#Calculating-a-free-energy-profile-using-umbrella-sampling) and [*adiabatic mapping*](#Calculating-a-potential-energy-profile-using-sequential-QM-MM-minimisations) as follows:
 
-Download `wt.sp20.top` from the `qmmm-workshop` directory, and `us_traj.mdcrd`, `wt.box.top`,  `adiab_traj.mdcrd` and `view_traj.vmd` from the directory `qmmm-workshop/example` to the same location on your local PC (which should have VMD installed).
+Download `wt.sp20.top` from the top directory, and `us_traj.mdcrd`, `wt.box.top`,  `adiab_traj.mdcrd` and `view_traj.vmd` from the directory `example` to the same location on your local PC (which should have VMD installed).
 
 Open VMD and *in the command line window* (window name ending in *vmd.exe* in Windows OS), change directory to the location you downloaded the files, for example:
 
