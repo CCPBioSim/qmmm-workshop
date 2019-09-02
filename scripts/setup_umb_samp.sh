@@ -10,9 +10,9 @@
 ##### THE FOLLOWING IS THE ESSENTIAL USER INPUT! #####
 #
 # Necessary files - all need to be present, with their relative paths from working dir
-prmtop="../wt.sp20.top"
+prmtop="../data/wt.sp20.top"
 restart="md.rst"
-md_files="../md1ps.i"
+md_files="../data/md1ps.i"
 # Reaction coordinate values, restraint, definition
 start_rc=-1.8
 end_rc=1.8

@@ -4,7 +4,7 @@
 # (C) Marc van der Kamp, 2018
 #
 # Run cpptraj to perform actions specified in input file
-$AMBERHOME/bin/cpptraj < ../strip_arg90.in > strip_arg90.out
+$AMBERHOME/bin/cpptraj < ../data/strip_arg90.in > strip_arg90.out
 
 # Write sander single-point energy calc input file
 echo "Single point energy calculation for each frame of an input trajectory
