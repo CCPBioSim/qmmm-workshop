@@ -1,4 +1,4 @@
-parm ../wt.sp20.top
+parm ../data/wt.sp20.top
 trajin rc-1.80/md1ps.nc
 trajin rc-1.65/md1ps.nc
 trajin rc-1.50/md1ps.nc

@@ -2,8 +2,8 @@
 source oldff/leaprc.ff14SB
 source leaprc.gaff
 # read in generated ligand parameters
-loadamberprep ../CHO.prepc
-loadamberparams ../CHO.frcmod
+loadamberprep ../data/CHO.prepc
+loadamberparams ../data/CHO.frcmod
 # load the water model (& ions)
 loadamberparams frcmod.ionsjc_tip3p
 # load the prepared pdb 
