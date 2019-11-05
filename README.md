@@ -43,15 +43,17 @@ We will simulate the reaction starting from a 'snapshot' from a standard MM dyna
 #### Preparation
 Make a new directory inside it and add a symlink (*symbolic link* or soft link) entitled `md.rst` to the starting structure of your choice. For example for starting structure md5.rst:
 
+**NB**: Please choose your own, different, starting structure - replace 5 with a number between 1-20.
+
 `mkdir us5`
 
 `cd us5`
 
-`ln -s ../md5.rst md.rst`
+`ln -s ../data/md5.rst md.rst`
 
 To set up umbrella sampling, you can use the bash-script `setup_umb_samp.sh` as follows:
 
-`bash ../setup_umb_samp.sh`
+`bash ../scripts/setup_umb_samp.sh`
 
 You will notice that a range of sub-directories has been generated, one for each "*umbrella sampling window*", spaced 0.15 Ang apart along the reaction coordinate for the reaction (see above). Inside these directories there is a sander input file for a short (1 ps) QM/MM simulation, `md1ps.i`, with a restraint on the reaction coordinate value (defined in the `.RST` file).
 
@@ -76,7 +78,7 @@ To obtain the free energy profile or PMF (*potential of mean force*) for the rea
 
 To run WHAM, type:
 
-`bash ../run_wham.sh`
+`bash ../scripts/run_wham.sh`
 
 This will take a few seconds and generate a 'metafile', `meta.dat`, and use this to run the <a href="http://membrane.urmc.rochester.edu/content/wham">WHAM code</a>. The WHAM code then generates `wham.log` and `wham.txt`. The first line of `wham.log` shows the command that was used to run WHAM. the `wham.txt` file contains the results.
 
@@ -100,7 +102,7 @@ Note that because the simulations that were run were rather short (1 ps per wind
 #### Visualising the umbrella sampling simulation in VMD
 To aid visualisation of the series of simulations, first create a trajectory of the sequential umbrella sampling simulations (once it has finished completely):
 
-`$AMBERHOME/bin/cpptraj < ../make_us_trj.in &> make_us_trj.log`
+`$AMBERHOME/bin/cpptraj < ../data/make_us_trj.in &> make_us_trj.log`
 
 Download the generated trajectory `us_traj.mdcrd` and `wt.sp20.top` (located in `qmmm-workshop`) to your PC and load & view in VMD as follows:
 
@@ -130,6 +132,8 @@ In addition to obtaining the potential energy profile, we will also:
 #### Preparation
 Create a new directory, e.g. called `adiab5` (if you originally started with md5.rst), for running the '*adiabatic mapping*', move into it: 
 
+**NB**: In all the below example commands, please replace 5 with the number you chose previously (between 1-20).
+
 `cd ..`
 
 `mkdir adiab5`
@@ -148,7 +152,7 @@ Note that this script also creates a system with a periodic box of water molecul
 
 To run the script (in the background), simply type:
 
-`bash ../run_adiab_all.sh &`
+`bash ../scripts/run_adiab_all.sh &`
 
 This should take about ~7-10 minutes in total.
 For more information about the different steps that are performed in the script, read the comments in the `run_adiab_all.sh` script (e.g. by opening it in `nano`).
@@ -188,7 +192,7 @@ Note how:
 #### Visualising the 'adiabatic mapping' simulation in VMD
 To aid visualisation of the structures along the potential energy profile, first create a trajectory of the sequential energy minimisations (once `run_adiab_all.sh` has finished completely):
 
-`$AMBERHOME/bin/cpptraj < ../make_adiab_trj.in &> make_adiab_trj.log`
+`$AMBERHOME/bin/cpptraj < ../adiab/make_adiab_trj.in &> make_adiab_trj.log`
 
 Download the generated trajectory `adiab_traj.mdcrd` and `wt.box.top` to your PC and load & view in VMD as follows:
 
