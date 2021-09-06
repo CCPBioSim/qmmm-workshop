@@ -24,4 +24,4 @@ trajin rc1.35/md1ps.nc
 trajin rc1.50/md1ps.nc
 trajin rc1.65/md1ps.nc
 trajin rc1.80/md1ps.nc
-trajout us_traj.mdcrd 
+trajout us_traj.mdcrd

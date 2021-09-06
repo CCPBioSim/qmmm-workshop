@@ -6,6 +6,7 @@ loadamberprep ../data/CHO.prepc
 loadamberparams ../data/CHO.frcmod
 # load the water model (& ions)
 loadamberparams frcmod.ionsjc_tip3p
+loadamberparams frcmod.tip3p
 # load the prepared pdb 
 mol = loadpdb min_rc-0.3init.pdb
 # solvate with box

@@ -1,0 +1,6 @@
+This tutorial needs:
+AmberTools21
+nglview
+matplotlib
+pandas
+numpy
