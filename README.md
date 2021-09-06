@@ -82,7 +82,7 @@ To run WHAM, type:
 
 This will take a few seconds and generate a 'metafile', `meta.dat`, and use this to run the <a href="http://membrane.urmc.rochester.edu/content/wham">WHAM code</a>. The WHAM code then generates `wham.log` and `wham.txt`. The first line of `wham.log` shows the command that was used to run WHAM. the `wham.txt` file contains the results.
 
-To plot the free energy profile, download `wham.txt` (navigate to your umbrella sampling directory in the Jupyter window and use e.g. right click and *'Save link as'* or similar).
+To plot the free energy profile, download `wham.txt` (navigate to your umbrella sampling directory in the Jupyter window and tick the box next to the file and click the Download button above the file listing).
 Import in your favourate plotting program (e.g. Excel). 
 Alternatively, copy and paste column-by-column from the terminal window to your plotting program, e.g. after using:
 
@@ -106,7 +106,7 @@ To aid visualisation of the series of simulations, first create a trajectory of 
 
 Download the generated trajectory `us_traj.mdcrd` and `wt.sp20.top` (located in `qmmm-workshop`) to your PC and load & view in VMD as follows:
 
-- Go back to the initial Jupyter notebook tab (File browser) and navigate to files. Use e.g *Right Click* and *"Save link as..."* to download
+- Go back to the initial Jupyter notebook tab (File browser) and navigate to files. To download files, tick the box next to the file and click the Download button above the file listing.
 - Start VMD. 
 - In the main VMD menu, choose: File --> New Molecule. 
 	- Select `wt.sp20.top` and set filetype as "AMBER7 Parm". Then press "Load". 
@@ -161,7 +161,7 @@ Once the script has finished, the energy values obtained will be written to the 
 
 #### Analysis: the potential energy profile and single point calculations
 
-To plot the potential energy profile and the related single point calculations, download `adiabatic_mapping_energies.dat` (navigate to your umbrella sampling directory in the Jupyter window and use e.g. right click and *'Save link as'* or similar).
+To plot the potential energy profile and the related single point calculations, download `adiabatic_mapping_energies.dat` (navigate to your umbrella sampling directory in the Jupyter window, tick the box next to the file and click the Download button above the file listing).
 Import this file in your favourate plotting program (e.g. Excel). 
 
 Alternatively, copy and paste column-by-column from the terminal window to your plotting program, e.g. using:
@@ -196,7 +196,8 @@ To aid visualisation of the structures along the potential energy profile, first
 
 Download the generated trajectory `adiab_traj.mdcrd` and `wt.box.top` to your PC and load & view in VMD as follows:
 
-- Go back to the initial Jupyter notebook tab (File browser) and navigate to files. Use e.g *Right Click* and *"Save link as..."* to download
+- Go back to the initial Jupyter notebook tab (File browser) and navigate to files. To download files, tick the box next to the file and click the Download button above the file listing.
+
 - Start VMD. 
 - In the main VMD menu, choose: File --> New Molecule. 
 	- Select `wt.box.top` and set filetype as "AMBER7 Parm". Then press "Load". 
