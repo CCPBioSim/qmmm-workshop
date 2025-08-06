@@ -18,4 +18,4 @@ trajin min_rc1.2.rst
 trajin min_rc1.4.rst
 trajin min_rc1.6.rst
 trajin min_rc1.8.rst
-trajout adiab_traj.mdcrd
+trajout adiab_traj.crd
