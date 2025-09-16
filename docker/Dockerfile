@@ -41,7 +41,7 @@ ENV WHAM_HOME=/opt/wham
 
 # Add all of the workshop files to the home directory
 COPY --chown=1000:100 . .
-RUN rm -r AUTHORS LICENSE _config.yml README.md docker .git .github
+RUN rm -rf AUTHORS LICENSE _config.yml README.md docker .git .github
 
 # Copy lab workspace
 COPY --chown=1000:100 docker/default-37a8.jupyterlab-workspace /home/jovyan/.jupyter/lab/workspaces/default-37a8.jupyterlab-workspace
