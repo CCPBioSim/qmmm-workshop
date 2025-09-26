@@ -164,6 +164,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v3.0.0
         with:
           token: ${{ secrets.BUILD_TOKEN }}
-          repository: jimboid/biosim-workshops-dash
+          repository: ccpbiosim/ccpbiosim.github.io
           event-type: build    
           client-payload: '{"repo": "${{ github.event.repository.name }}", "tag": "${{ needs.build.outputs.tag }}"}'
