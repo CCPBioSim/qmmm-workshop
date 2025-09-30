@@ -41,11 +41,11 @@ jobs:
 
       - name: Authenticate with GHCR
         id: auth
-        uses: docker/login-action@v3.5.0
+        uses: docker/login-action@v3.6.0
         with:
           registry: ghcr.io
-          username: ${{github.actor}}
-          password: ${{secrets.BUILD_TOKEN}}
+          username: ${{ github.actor }}
+          password: ${{ secrets.BUILD_TOKEN }}
 
       - name: Set up Docker Buildx
         id: buildx
@@ -117,11 +117,11 @@ jobs:
 
       - name: Authenticate with GHCR
         id: auth
-        uses: docker/login-action@v3.5.0
+        uses: docker/login-action@v3.6.0
         with:
           registry: ghcr.io
-          username: ${{github.actor}}
-          password: ${{secrets.BUILD_TOKEN}}
+          username: ${{ github.actor }}
+          password: ${{ secrets.BUILD_TOKEN }}
 
       - name: Set up Docker Buildx
         id: buildx
