@@ -44,7 +44,7 @@ jobs:
         uses: docker/login-action@v3.6.0
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.BUILD_TOKEN }}
 
       - name: Set up Docker Buildx
@@ -120,7 +120,7 @@ jobs:
         uses: docker/login-action@v3.6.0
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.BUILD_TOKEN }}
 
       - name: Set up Docker Buildx
@@ -161,7 +161,7 @@ jobs:
           docker buildx imagetools inspect ghcr.io/${{ vars.ORG_REPO }}/${{ github.event.repository.name }}:latest
 
       - name: Post version update to dash
-        uses: peter-evans/repository-dispatch@v3.0.0
+        uses: peter-evans/repository-dispatch@v4.0.0
         with:
           token: ${{ secrets.BUILD_TOKEN }}
           repository: ccpbiosim/ccpbiosim.github.io
