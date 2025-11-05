@@ -35,7 +35,7 @@ jobs:
 
       - name: Metadata
         id: meta
-        uses: docker/metadata-action@v5.8.0
+        uses: docker/metadata-action@v5.9.0
         with:
           images: ghcr.io/${{ vars.ORG_REPO }}/${{ github.event.repository.name }}
 
@@ -171,7 +171,7 @@ jobs:
 
       - name: Metadata
         id: meta
-        uses: docker/metadata-action@v5.8.0
+        uses: docker/metadata-action@v5.9.0
         with:
           images: ghcr.io/${{ vars.ORG_REPO }}/${{ github.event.repository.name }}
           tags: |
