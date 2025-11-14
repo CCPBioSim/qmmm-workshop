@@ -21,6 +21,8 @@ RUN tar xvjf AmberTools22.tar.bz2 && \
 
 WORKDIR /tmp/amber22_src
 RUN ./update_amber --update
+WORKDIR /tmp/amber22_src/AmberTools/src/pytraj
+RUN python setup.py --cythonize
 RUN mkdir /tmp/build
 WORKDIR /tmp/build
 
