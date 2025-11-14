@@ -7,7 +7,7 @@ LABEL maintainer="James Gebbie-Rayet <james.gebbie@stfc.ac.uk>"
 ARG AMBERTOOLS_DL=null
 
 # Install workshop deps
-RUN mamba install ipywidgets nglview pandas numpy matplotlib scipy -y
+RUN mamba install ipywidgets nglview pandas numpy matplotlib scipy cython -y
 
 USER root
 RUN mkdir /opt/amber22 && \
