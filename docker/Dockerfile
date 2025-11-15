@@ -29,6 +29,7 @@ WORKDIR /tmp/build
 RUN cmake /tmp/amber22_src -DCMAKE_INSTALL_PREFIX=/opt/amber22 -DBUILD_PYTHON=TRUE -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=TRUE -DDOWNLOAD_MINICONDA=FALSE -DCOMPILER=MANUAL -DBUILD_GUI=FALSE -DCOMPILER=GNU -DOPENMP=TRUE -DCUDA=FALSE -DMPI=FALSE -DUSE_FFT=True -DBUILD_DEPRECATED=False -DBUILD_INDEV=False -DBUILD_PERL=True -DOPTIMIZE=True
 RUN make -j8
 RUN make install
+RUN chown -R 1000:100 /opt/amber22
 
 # Cleanup.
 RUN rm -r /tmp/amber22_src /tmp/build
@@ -48,13 +49,12 @@ RUN cd /opt && \
 USER $NB_USER
 WORKDIR $HOME
 
-# Export important paths.
-
 # Add the exec to the path.
 ENV AMBERHOME=/opt/amber22
 ENV PATH="$PATH:/opt/amber22/bin"
-ENV LD_LIBRARY_PATH="$AMBERHOME/lib"
-ENV PERL5LIB="$AMBERHOME/lib/perl"
+ENV LD_LIBRARY_PATH="$AMBERHOME/lib:$LD_LIBRARY_PATH"
+ENV PERL5LIB="$AMBERHOME/lib/perl:$PERL5LIB"
+ENV PYTHONPATH="$AMBERHOME/lib/python3.12/site-packages:$PYTHONPATH"
 ENV WHAM_HOME=/opt/wham
 
 # Add all of the workshop files to the home directory
