@@ -11,7 +11,7 @@ trajin rc-0.60/md1ps.nc
 trajin rc-0.45/md1ps.nc
 trajin rc-0.30/md1ps.nc
 trajin rc-0.15/md1ps.nc
-trajin rc0.00/md1ps.nc
+trajin rc-0.00/md1ps.nc
 trajin rc0.15/md1ps.nc
 trajin rc0.30/md1ps.nc
 trajin rc0.45/md1ps.nc
