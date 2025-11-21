@@ -4,6 +4,7 @@ FROM ghcr.io/ccpbiosim/jupyterhub-base:$BASE_IMAGE
 
 LABEL maintainer="James Gebbie-Rayet <james.gebbie@stfc.ac.uk>"
 
+ARG TARGETPLATFORM
 ARG AMBERTOOLS_DL=null
 ARG AMBERTOOLS_VER=25
 
@@ -55,6 +56,11 @@ ENV WHAM_HOME=/opt/wham
 # Add all of the workshop files to the home directory
 COPY --chown=1000:100 . .
 RUN rm -rf AUTHORS LICENSE _config.yml README.md docker .git .github
+
+RUN if [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
+      sed -i 's/# trajin rc0.00/md1ps.nc/trajin rc-0.00/md1ps.nc/' /home/jovyan/data/make_us_trj.in; \
+    fi
+
 
 # Copy lab workspace
 COPY --chown=1000:100 docker/default-37a8.jupyterlab-workspace /home/jovyan/.jupyter/lab/workspaces/default-37a8.jupyterlab-workspace

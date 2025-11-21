@@ -81,8 +81,8 @@ export MYEXE=\"\$AMBERHOME/bin/sander\"
 
 #### Start THE loop 
 # In case 'bc' is not present (check_bc=0), use hard-coded r1 and r4)
-for i in {$start_rc..$end_rc..$step}; do
-       rc=`printf "%3.2f" $i`
+for i in `seq $start_rc $step $end_rc`; do
+     rc=`printf "%3.2f" $i`
      if [ $check_bc -eq 1 ]; then
        r1=`echo "scale=2; $rc-10" | bc`
        r4=`echo "scale=2; $rc+10" | bc`

@@ -56,6 +56,7 @@ jobs:
         with:
           build-args: |
             AMBERTOOLS_DL=${{ secrets.AMBERTOOLS_DL }}
+            TARGETPLATFORM=${{ matrix.platform }}
           file: ./docker/Dockerfile
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -71,7 +72,9 @@ jobs:
             cd us5; \
             ln -s ../data/md5.rst md.rst; \
             bash ../scripts/setup_umb_samp.sh; \
+            bash cat run_umb_samp.sh; \
             bash run_umb_samp.sh; \
+            bash ls; \
             wait; \
             bash ../scripts/run_wham.sh; \
             wait; \
@@ -105,6 +108,7 @@ jobs:
         with:
           build-args: |
             AMBERTOOLS_DL=${{ secrets.AMBERTOOLS_DL }}
+            TARGETPLATFORM=${{ matrix.platform }}
           file: ./docker/Dockerfile
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -120,7 +124,9 @@ jobs:
             cd us5; \
             ln -s ../data/md5.rst md.rst; \
             bash ../scripts/setup_umb_samp.sh; \
+            bash cat run_umb_samp.sh; \
             bash run_umb_samp.sh; \
+            bash ls; \
             wait; \
             bash ../scripts/run_wham.sh; \
             wait; \
