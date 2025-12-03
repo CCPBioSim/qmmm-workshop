@@ -27,7 +27,7 @@ jobs:
           sudo docker builder prune -a
 
       - name: checkout
-        uses: actions/checkout@v6.0.0
+        uses: actions/checkout@v6.0.1
 
       - name: Prepare env
         id: envvars
