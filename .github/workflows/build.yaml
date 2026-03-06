@@ -52,7 +52,7 @@ jobs:
 
       - name: Build and push by digest
         if: github.event_name == 'pull_request'
-        uses: docker/build-push-action@v6.19.2
+        uses: docker/build-push-action@v7.0.0
         with:
           build-args: |
             AMBERTOOLS_DL=${{ secrets.AMBERTOOLS_DL }}
@@ -104,7 +104,7 @@ jobs:
       - name: Build and push by digest
         if: github.event_name != 'pull_request'
         id: build
-        uses: docker/build-push-action@v6.19.2
+        uses: docker/build-push-action@v7.0.0
         with:
           build-args: |
             AMBERTOOLS_DL=${{ secrets.AMBERTOOLS_DL }}
