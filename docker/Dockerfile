@@ -6,7 +6,7 @@ LABEL maintainer="James Gebbie-Rayet <james.gebbie@stfc.ac.uk>"
 
 ARG TARGETPLATFORM
 ARG AMBERTOOLS_DL=null
-ARG AMBERTOOLS_VER=25
+ARG AMBERTOOLS_VER=26
 
 # Switch to jovyan user.
 USER $NB_USER
