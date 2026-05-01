@@ -13,7 +13,7 @@ USER $NB_USER
 WORKDIR $HOME
 
 # Install workshop deps
-RUN mamba install nglview pandas numpy matplotlib scipy numba gemmi bioconda::bio rich freesasa scikit-learn -y 
+RUN mamba install nglview pandas numpy matplotlib scipy numba gemmi bioconda::bio rich freesasa scikit-learn sympy networkx -y 
 WORKDIR /tmp
 
 RUN wget --no-verbose $AMBERTOOLS_DL/ambertools$AMBERTOOLS_VER.tar.bz2 && \
