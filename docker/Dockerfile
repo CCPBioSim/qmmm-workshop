@@ -23,6 +23,8 @@ RUN wget --no-verbose $AMBERTOOLS_DL/ambertools$AMBERTOOLS_VER.tar.bz2 && \
 
 WORKDIR /tmp/ambertools_src
 RUN ./update_amber --update
+WORKDIR /tmp/ambertools_src/AmberTools/src/pytraj
+RUN python setup.py --cythonize
 RUN mkdir /tmp/build
 WORKDIR /tmp/build
 
