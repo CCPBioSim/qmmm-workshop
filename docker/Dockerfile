@@ -12,6 +12,10 @@ ARG AMBERTOOLS_VER=26
 USER $NB_USER
 WORKDIR $HOME
 
+# Add key locations to the env.
+ENV AMBERHOME=/opt/conda
+ENV WHAM_HOME=/opt/wham
+
 # Install workshop deps
 RUN mamba install nglview pandas numpy matplotlib scipy numba gemmi bioconda::bio rich freesasa scikit-learn sympy networkx -y 
 WORKDIR /tmp
@@ -50,10 +54,6 @@ RUN cd /opt && \
 # Switch to jovyan user.
 USER $NB_USER
 WORKDIR $HOME
-
-# Add the exec to the path.
-ENV AMBERHOME=/opt/conda
-ENV WHAM_HOME=/opt/wham
 
 # Add all of the workshop files to the home directory
 COPY --chown=1000:100 . .
