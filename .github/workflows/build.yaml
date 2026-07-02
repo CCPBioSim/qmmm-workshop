@@ -95,7 +95,7 @@ jobs:
       - name: Authenticate with GHCR
         if: github.event_name != 'pull_request'
         id: auth
-        uses: docker/login-action@v4.2.0
+        uses: docker/login-action@v4.3.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -176,7 +176,7 @@ jobs:
 
       - name: Authenticate with GHCR
         id: auth
-        uses: docker/login-action@v4.2.0
+        uses: docker/login-action@v4.3.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
