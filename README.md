@@ -1,7 +1,7 @@
 # CCPBioSim QM/MM Workshop
 
 [![ci](https://github.com/ccpbiosim/qmmm-workshop/actions/workflows/build.yaml/badge.svg?branch=main)](https://github.com/ccpbiosim/qmmm-workshop/actions/workflows/build.yaml)
-[![latest](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fccpbiosim.github.io%2Fworkshop.json&query=%24.containers.qmmm-workshop.latest&labelColor=grey&logo=github&logoColor=white&label=latest&color=purple)](https://github.com/ccpbiosim/qmmm-workshop/pkgs/container/qmmm-workshop)
+[![latest](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fccpbiosim.github.io%2Fassets.json&query=%24.containers.qmmm-workshop.latest&labelColor=grey&logo=github&logoColor=white&label=latest&color=purple)](https://github.com/ccpbiosim/qmmm-workshop/pkgs/container/qmmm-workshop)
 [![issues](https://img.shields.io/github/issues/ccpbiosim/qmmm-workshop?logo=github&labelColor=grey)](https://github.com/CCPBioSim/qmmm-workshop/issues)
 [![pr](https://img.shields.io/github/issues-pr/ccpbiosim/qmmm-workshop?logo=github&labelColor=grey)](https://github.com/CCPBioSim/qmmm-workshop/pulls)
 
