@@ -19,9 +19,9 @@ WORKDIR /tmp
 USER root
 RUN cd /opt && \
     mkdir wham && \
-    wget http://membrane.urmc.rochester.edu/sites/default/files/wham/wham-release-2.0.11.tgz && \
-    tar xvf wham-release-2.0.11.tgz -C wham --strip-components=1 && \
-    rm wham-release-2.0.11.tgz && \
+    wget https://github.com/agrossfield/wham/archive/refs/tags/v2.1.1.tar.gz && \
+    tar xvf v2.1.1.tar.gz -C wham --strip-components=1 && \
+    rm v2.1.1.tar.gz && \
     cd wham/wham && \
     make clean && \
     make &&\
