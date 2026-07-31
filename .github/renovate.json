@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
   "timezone": "Europe/London",
-  "schedule": [ "after 9am and before 5pm every weekday"],
+  "schedule": ["after 9am and before 5pm every weekday"],
   "assignees": ["jimboid"],
   "enabledManagers": ["github-actions"],
 }
