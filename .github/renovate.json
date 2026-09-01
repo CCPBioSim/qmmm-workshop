@@ -1,8 +1,19 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "$schema": "https://renovatebot.com",
+  "extends": [
+    "config:best-practices",
+    "helpers:pinGitHubActionDigestsToSemver"
+  ],
   "timezone": "Europe/London",
   "schedule": ["after 9am and before 5pm every weekday"],
+  "dependencyDashboard": true,
   "assignees": ["jimboid"],
-  "enabledManagers": ["github-actions"],
+  "minimumReleaseAge": "3 days",
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions",
+      "addLabels": ["ci", "dependencies"]
+    },
+  ]
 }
