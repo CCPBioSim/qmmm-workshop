@@ -1,5 +1,5 @@
 {
-  "$schema": "https://renovatebot.com",
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:best-practices",
     "helpers:pinGitHubActionDigestsToSemver"
@@ -14,6 +14,6 @@
       "matchManagers": ["github-actions"],
       "groupName": "GitHub Actions",
       "addLabels": ["ci", "dependencies"]
-    },
+    }
   ]
 }
