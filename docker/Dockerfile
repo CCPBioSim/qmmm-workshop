@@ -12,8 +12,17 @@ USER $NB_USER
 WORKDIR $HOME
 
 # Install workshop deps
-RUN mamba install nglview pandas numpy matplotlib scipy ambertools=$AMBERTOOLS_VER -y 
+RUN conda install -y -c conda-forge \
+    nglview=4.0.1 \
+    pandas=3.0.5 \
+    numpy=2.5.3 \
+    matplotlib=3.11.1 \
+    scipy=1.18.1 \
+    ambertools=$AMBERTOOLS_VER
 WORKDIR /tmp
+
+COPY docker/fix-nglview.sh /tmp/fix-nglview.sh
+RUN bash /tmp/fix-nglview.sh
 
 # Install Wham.
 USER root
