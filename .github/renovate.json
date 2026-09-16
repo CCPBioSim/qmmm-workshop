@@ -15,5 +15,34 @@
       "groupName": "GitHub Actions",
       "addLabels": ["ci", "dependencies"]
     }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)Dockerfile[^/]*$/"
+      ],
+      "matchStringsStrategy": "recursive",
+      "matchStrings": [
+        "pip3? install[\\s\\S]*?(?<packages>(?:[\\w.-]+==[\\w.-]+[\\s\\\\]*)+)",
+        "(?<depName>[\\w.-]+)==(?<currentValue>[\\w.-]+)"
+      ],
+      "datasourceTemplate": "pypi",
+      "versioningTemplate": "pep440"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)Dockerfile[^/]*$/"
+      ],
+      "matchStringsStrategy": "recursive",
+      "matchStrings": [
+        "(?:mamba|conda) install[\\s\\S]*?(?<packages>(?:(?:[\\w-]+::)?[\\w.-]+=[\\w.-]+[\\s\\\\]*)+)",
+        "(?:(?<channel>[\\w-]+)::)?(?<depName>[\\w.-]+)=(?<currentValue>[\\w.-]+)"
+      ],
+      "datasourceTemplate": "conda",
+      "registryUrlTemplate": "https://api.anaconda.org/package/{{#if channel}}{{channel}}{{else}}conda-forge{{/if}}/",
+      "versioningTemplate": "pep440"
+    }
   ]
 }
