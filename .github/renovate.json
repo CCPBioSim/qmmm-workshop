@@ -5,7 +5,7 @@
     "helpers:pinGitHubActionDigestsToSemver"
   ],
   "timezone": "Europe/London",
-  "schedule": ["after 9am and before 5pm every weekday"],
+  "schedule": ["after 5am and before 5pm every weekday"],
   "dependencyDashboard": true,
   "assignees": ["jimboid"],
   "minimumReleaseAge": "3 days",
