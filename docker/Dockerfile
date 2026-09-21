@@ -16,7 +16,7 @@ RUN conda install -y -c conda-forge \
     conda-forge::nglview=4.0.1 \
     conda-forge::pandas=3.0.5 \
     conda-forge::numpy=2.5.3 \
-    conda-forge::matplotlib=3.11.1 \
+    conda-forge::matplotlib=3.11.2 \
     conda-forge::scipy=1.18.1 \
     conda-forge::ambertools=$AMBERTOOLS_VER
 WORKDIR /tmp
