@@ -224,5 +224,5 @@ jobs:
         with:
           token: ${{ secrets.BUILD_TOKEN }}
           repository: ccpbiosim/ccpbiosim.github.io
-          event-type: build    
+          event-type: workshops    
           client-payload: '{"repo": "${{ github.event.repository.name }}", "tag": "${{ needs.build.outputs.tag }}"}'
