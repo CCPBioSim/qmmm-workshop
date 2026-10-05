@@ -219,10 +219,24 @@ jobs:
         run: |
           docker buildx imagetools inspect ghcr.io/${{ vars.ORG_REPO }}/${{ github.event.repository.name }}:latest
 
+      - name: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Build dispatch payload
+        id: payload
+        env:
+          REPO: ${{ github.event.repository.name }}
+          TAG: ${{ needs.build.outputs.tag }}
+        run: |
+          payload=$(yq -o=json '.' web-meta.yaml \
+            | jq -c --arg repo "$REPO" --arg tag "$TAG" \
+                '{repo: $repo, tag: $tag, meta: .}')
+          echo "json=$payload" >> "$GITHUB_OUTPUT"
+
       - name: Post version update to dash
         uses: peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697 # v4.0.1
         with:
           token: ${{ secrets.BUILD_TOKEN }}
           repository: ccpbiosim/ccpbiosim.github.io
-          event-type: workshops    
-          client-payload: '{"repo": "${{ github.event.repository.name }}", "tag": "${{ needs.build.outputs.tag }}"}'
+          event-type: workshops
+          client-payload: ${{ steps.payload.outputs.json }}
