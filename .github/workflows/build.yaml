@@ -224,13 +224,27 @@ jobs:
 
       - name: Build dispatch payload
         id: payload
+        shell: bash
         env:
           REPO: ${{ github.event.repository.name }}
           TAG: ${{ needs.build.outputs.tag }}
+          META_FILE: .github/web-meta.yaml
         run: |
-          payload=$(yq -o=json '.' web-meta.yaml \
-            | jq -c --arg repo "$REPO" --arg tag "$TAG" \
-                '{repo: $repo, tag: $tag, meta: .}')
+          if [ ! -f "$META_FILE" ]; then
+            echo "::error::$META_FILE not found in $(pwd)"
+            ls -la . .github
+            exit 1
+          fi
+
+          meta=$(yq -o=json '.' "$META_FILE")
+
+          payload=$(jq -nc \
+            --arg repo "$REPO" \
+            --arg tag "$TAG" \
+            --argjson meta "$meta" \
+            '{repo: $repo, tag: $tag, meta: $meta}')
+
+          echo "payload: $payload"
           echo "json=$payload" >> "$GITHUB_OUTPUT"
 
       - name: Post version update to dash
