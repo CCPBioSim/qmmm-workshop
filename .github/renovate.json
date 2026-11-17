@@ -6,7 +6,9 @@
   ],
   "timezone": "Europe/London",
   "schedule": ["after 5am and before 5pm every weekday"],
-  "dependencyDashboard": true,
+  "dependencyDashboard": {
+    "enabled": true
+  },
   "assignees": ["jimboid"],
   "minimumReleaseAge": "3 days",
   "packageRules": [
